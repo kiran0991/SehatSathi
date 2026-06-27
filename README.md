@@ -188,12 +188,6 @@ supabase secrets set GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 supabase secrets set OPENAI_API_KEY=YOUR_OPENAI_API_KEY
 ```
 
-Optional:
-
-```bash
-supabase secrets set ADMIN_EMAIL_ALLOWLIST=your.email@company.com
-```
-
 ### Deploy Edge Functions
 
 ```bash
