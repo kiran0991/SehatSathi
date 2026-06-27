@@ -67,7 +67,39 @@ supabase/
 test/
 ```
 
-## Prerequisites
+## How Flutter Connects To Supabase
+
+Flutter does not create a Supabase project automatically, and installing Flutter does not provision backend accounts.
+
+### Developer Setup
+
+The developer must first create or already have a Supabase project in the Supabase dashboard. That project provides:
+
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
+
+Those values are passed into the Flutter app at runtime with `--dart-define`, and the app uses the Supabase Flutter SDK to connect to that backend.
+
+### End-User Signup And Login
+
+End users do not log into the Supabase dashboard.
+
+Instead, they use the login or sign-up screens inside the Flutter app. The app sends those authentication requests to Supabase Auth for the configured project.
+
+### In Practice
+
+The connection flow is:
+
+1. Developer creates a Supabase project.
+2. Developer applies migrations, secrets, and Edge Functions.
+3. Developer runs the Flutter app with the correct `SUPABASE_URL` and `SUPABASE_ANON_KEY`.
+4. End user opens the app and signs up or logs in through the app UI.
+
+Without Supabase configuration, the Flutter app may still compile, but authentication, OCR, scan analysis, history, and profile-backed features will not work correctly.
+
+## Local Development
+
+### Prerequisites
 
 Install these before running the project:
 
@@ -82,7 +114,7 @@ Optional for local Supabase:
 
 - Docker Desktop
 
-## Runtime Configuration
+### Runtime Configuration
 
 The Flutter app reads these values through `--dart-define`:
 
@@ -97,7 +129,7 @@ The Supabase Edge Functions require these secrets:
 - `GEMINI_API_KEY`
 - `OPENAI_API_KEY`
 
-## Install Dependencies
+### Install Dependencies
 
 From the project root:
 
