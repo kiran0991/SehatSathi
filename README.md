@@ -49,8 +49,6 @@ Sehat Sathi is a Flutter application for scanning packaged-food ingredient label
   Health profile management
 - `supabase/functions/ocr-extract`
   OCR pipeline
-- `supabase/functions/analyze-scan`
-  Ingredient matching, AI assistance, scoring, and result persistence
 
 ## Project Structure
 
